@@ -1,0 +1,9 @@
+{
+  "name": "mcd-pages",
+  "version": "0.0.1",
+  "description": "mcd cli",
+  "bin": "src/index.js",
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
