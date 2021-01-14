@@ -39,7 +39,6 @@ function main(args) {
 if (require.main === module) {
   main(process.argv)
     .then(() => {
-      console.info('done')
       process.stdout.write('Published\n');
     })
     .catch(err => {
