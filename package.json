@@ -1,9 +1,20 @@
 {
   "name": "mcd-pages",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "mcd cli",
-  "bin": "src/index.js",
-  "keywords": [],
+  "bin": {
+    "mcd-pages": "bin/mcd-pages.js"
+  },
+  "homepage": "https://github.com/hexuebing/mcd-pages",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hexuebing/mcd-pages"
+  },
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "keywords": ["mcd"],
   "author": "",
   "license": "MIT"
 }
