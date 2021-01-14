@@ -24,12 +24,14 @@ function main(args) {
       .option('-d, --dist <dist>', 'Base directory for all source files')
       .option('-b, --branch <branch>', 'new branch for mcd', mcdPages.defaults.branch)
       .option('-r, --repo <repo>', 'URL of the repository you are pushing to')
+      .requiredOption('-s, --space <space>', 'the site space')
       .parse(args);
 
       const config = {
         dist: program.dist,
         branch: program.branch,
-        repo: program.repo
+        repo: program.repo,
+        space: program.space
       }
       return publish(config)
   })

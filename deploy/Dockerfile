@@ -5,7 +5,7 @@ FROM nginx:latest
 COPY conf.d /etc/nginx/conf.d
 
 # 拷贝网站页面
-COPY style-sets /usr/share/nginx/www
+COPY spaceName /usr/share/nginx/www
 
 # 重新加载nginx
 # CMD nginx -s reload
