@@ -1,0 +1,8 @@
+name: style-sets
+
+web:
+  - name: server
+    path: /
+    cmd: nginx -g "daemon off;"
+    port:
+      - 80:80

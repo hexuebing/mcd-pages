@@ -5,18 +5,46 @@ const program = require('commander');
 const path = require('path');
 const pkg = require('../package.json');
 
+function publish(config) {
+  return new Promise((resolve, reject) => {
+    const basePath = path.resolve(process.cwd(), config.dist);
+    mcdPages.publish(basePath, config, err => {
+      if (err) {
+        return reject(err);
+      }
+      resolve();
+    });
+  });
+}
+
 function main(args) {
-  program
-  .version(pkg.version)
-  .option('-d, --dist <dist>', 'Base directory for all source files')
-  .option('-b, --branch <branch>', 'new branch for mcd', mcdPages.defaults.branch)
-  .parse(args);
-  console.info(program.dist)
-  console.info(program.branch)
+  return Promise.resolve().then(() => {
+    program
+      .version(pkg.version)
+      .option('-d, --dist <dist>', 'Base directory for all source files')
+      .option('-b, --branch <branch>', 'new branch for mcd', mcdPages.defaults.branch)
+      .option('-r, --repo <repo>', 'URL of the repository you are pushing to')
+      .parse(args);
+
+      const config = {
+        dist: program.dist,
+        branch: program.branch,
+        repo: program.repo
+      }
+      return publish(config)
+  })
+  
 }
 
 if (require.main === module) {
   main(process.argv)
+    .then(() => {
+      console.info('done')
+      process.stdout.write('Published\n');
+    })
+    .catch(err => {
+      process.stderr.write(`${err.message}\n`, () => process.exit(1));
+    });
 }
 
 exports = module.exports = main;
