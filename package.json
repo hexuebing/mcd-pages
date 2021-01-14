@@ -14,7 +14,12 @@
     "lib",
     "bin"
   ],
-  "keywords": ["mcd"],
+  "keywords": [
+    "mcd"
+  ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^6.2.1"
+  }
 }
