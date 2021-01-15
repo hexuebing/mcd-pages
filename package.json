@@ -1,6 +1,6 @@
 {
   "name": "mcd-pages",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "mcd cli",
   "bin": {
     "mcd-pages": "bin/mcd-pages.js"
@@ -12,7 +12,8 @@
   },
   "files": [
     "lib",
-    "bin"
+    "bin",
+    "deploy"
   ],
   "keywords": [
     "mcd"
